@@ -1,0 +1,31 @@
+# Issuer
+Prefix:
+    3 Visa.
+    4 Visa.
+    5 Visa.
+    50 MC.
+    51-55 MC.
+    56 MC.
+    2220 MC.
+    2221-2720 MC.
+    2721 MC.
+    33 AE.
+    34 AE.      [property AE]
+    35 AE.
+    36 AE.
+    37 AE.      [property AE]
+    38 AE.
+    Empty.
+
+
+# Credit Card Number
+Length:
+    15.         [if AE]
+    16.         [if !AE]
+    Short.
+    Long.
+    0.          [error]
+
+CheckBit:
+    Valid.
+    Invalid.
