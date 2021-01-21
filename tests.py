@@ -108,7 +108,7 @@ class TestCC(TestCase):
     def test11(self):
         """
         Utilizes category partition testing to assess: 
-        Prefix   :  51-55 MC
+        Prefix   :  51 MC
         Length   :  16
         CheckBit :  Valid
         """
@@ -271,7 +271,7 @@ class TestCC(TestCase):
         """
         Utilizes category partition testing to assess: 
         Prefix   :  34 AE
-        Length   :  14
+        Length   :  <15
         CheckBit :  Valid
         """
         self.assertFalse(credit_card_validator("34063695431427"))
@@ -280,7 +280,7 @@ class TestCC(TestCase):
         """
         Utilizes category partition testing to assess: 
         Prefix   :  34 AE
-        Length   :  14
+        Length   :  <15
         CheckBit :  Invalid (checksum -1)
         """
         self.assertFalse(credit_card_validator("34140996524230"))
@@ -289,7 +289,7 @@ class TestCC(TestCase):
         """
         Utilizes category partition testing to assess: 
         Prefix   :  34 AE
-        Length   :  16
+        Length   :  >15
         CheckBit :  Valid
         """
         self.assertFalse(credit_card_validator("3461749774119224"))
@@ -298,7 +298,7 @@ class TestCC(TestCase):
         """
         Utilizes category partition testing to assess: 
         Prefix   :  34 AE
-        Length   :  16
+        Length   :  >15
         CheckBit :  Invalid (checksum +1)
         """
         self.assertFalse(credit_card_validator("3410776572135568"))
@@ -392,6 +392,42 @@ class TestCC(TestCase):
         CheckBit :  Valid
         """
         self.assertFalse(credit_card_validator("0000000000000000"))
+    
+    def test41(self):
+        """
+        Utilizes category partition testing to assess: 
+        Prefix   :  52 MC
+        Length   :  16
+        CheckBit :  Valid
+        """
+        self.assertTrue(credit_card_validator("5257193687554768"))
+    
+    def test42(self):
+        """
+        Utilizes category partition testing to assess: 
+        Prefix   :  53 MC
+        Length   :  16
+        CheckBit :  Valid
+        """
+        self.assertTrue(credit_card_validator("5332207677321019"))
+    
+    def test43(self):
+        """
+        Utilizes category partition testing to assess: 
+        Prefix   :  54 MC
+        Length   :  16
+        CheckBit :  Valid
+        """
+        self.assertTrue(credit_card_validator("5453936520873338"))
+
+    def test44(self):
+        """
+        Utilizes category partition testing to assess: 
+        Prefix   :  55 MC
+        Length   :  16
+        CheckBit :  Valid
+        """
+        self.assertTrue(credit_card_validator("5568657899972368"))
 
 
 
