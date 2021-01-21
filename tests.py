@@ -447,5 +447,6 @@ class TestCC(TestCase):
         """
         self.assertTrue(credit_card_validator("2720996726400694"))
 
+
 if __name__ == '__main__':
     unittest.main()
