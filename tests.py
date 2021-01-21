@@ -1,12 +1,11 @@
 # Ashley Owens
-# CS 362 HW 1
-# Black box testing assignment in which the tester does not have access
-# to the source code. This testing suite was created using the TSL Generator
+# CS 362 HW 1: Black Box Testing
+# This testing suite was created using the TSL Generator
 # software using Category Partition Testing.
 # Bug 1: The empty string
 # Bug 2: Visa card number length <16 digits
 # Bug 3: Valid Visa card number
-# Bug 4: Invalid AE checksum digit and valid AE card numbers?
+# Bug 4: Invalid AE checksum digit
 # Bug 5: AE card number length >15 digits
 # Bug 6: Valid MC number with prefix = 2720
 
@@ -45,7 +44,7 @@ class TestCC(TestCase):
     def test3(self):
         """
         Utilizes category partition testing to assess:
-        Prefix   :  4 Visa
+        Prefix   :  4 Visa (valid prefix)
         Length   :  16
         CheckBit :  Valid
         """
@@ -117,7 +116,7 @@ class TestCC(TestCase):
     def test11(self):
         """
         Utilizes category partition testing to assess:
-        Prefix   :  51 MC
+        Prefix   :  51 MC (valid prefix)
         Length   :  16
         CheckBit :  Valid
         """
@@ -189,7 +188,7 @@ class TestCC(TestCase):
     def test19(self):
         """
         Utilizes category partition testing to assess:
-        Prefix   :  2221 MC
+        Prefix   :  2221 MC (valid prefix)
         Length   :  16
         CheckBit :  Valid
         """
@@ -261,7 +260,7 @@ class TestCC(TestCase):
     def test26(self):
         """
         Utilizes category partition testing to assess:
-        Prefix   :  34 AE
+        Prefix   :  34 AE (valid prefix)
         Length   :  15
         CheckBit :  Valid
         """
@@ -333,7 +332,7 @@ class TestCC(TestCase):
     def test34(self):
         """
         Utilizes category partition testing to assess:
-        Prefix   :  37 AE
+        Prefix   :  37 AE (valid prefix)
         Length   :  15
         CheckBit :  Valid
         """
@@ -405,7 +404,7 @@ class TestCC(TestCase):
     def test41(self):
         """
         Utilizes category partition testing to assess:
-        Prefix   :  52 MC
+        Prefix   :  52 MC (valid prefix)
         Length   :  16
         CheckBit :  Valid
         """
@@ -414,7 +413,7 @@ class TestCC(TestCase):
     def test42(self):
         """
         Utilizes category partition testing to assess:
-        Prefix   :  53 MC
+        Prefix   :  53 MC (valid prefix)
         Length   :  16
         CheckBit :  Valid
         """
@@ -423,7 +422,7 @@ class TestCC(TestCase):
     def test43(self):
         """
         Utilizes category partition testing to assess:
-        Prefix   :  54 MC
+        Prefix   :  54 MC (valid prefix)
         Length   :  16
         CheckBit :  Valid
         """
@@ -432,7 +431,7 @@ class TestCC(TestCase):
     def test44(self):
         """
         Utilizes category partition testing to assess:
-        Prefix   :  55 MC
+        Prefix   :  55 MC (valid prefix)
         Length   :  16
         CheckBit :  Valid
         """
@@ -441,7 +440,7 @@ class TestCC(TestCase):
     def test45(self):
         """
         Utilizes category partition testing to assess:
-        Prefix   :  2720 MC
+        Prefix   :  2720 MC (valid prefix)
         Length   :  16
         CheckBit :  Valid
         """
@@ -450,7 +449,7 @@ class TestCC(TestCase):
     def test46(self):
         """
         Utilizes category partition testing to assess:
-        Prefix   :  2621 MC
+        Prefix   :  2621 MC (valid prefix)
         Length   :  16
         CheckBit :  Valid
         """
@@ -459,7 +458,7 @@ class TestCC(TestCase):
     def test47(self):
         """
         Utilizes category partition testing to assess:
-        Prefix   :  2521 MC
+        Prefix   :  2521 MC (valid prefix)
         Length   :  16
         CheckBit :  Valid
         """
@@ -468,7 +467,7 @@ class TestCC(TestCase):
     def test48(self):
         """
         Utilizes category partition testing to assess:
-        Prefix   :  2421 MC
+        Prefix   :  2421 MC (valid prefix)
         Length   :  16
         CheckBit :  Valid
         """
@@ -477,7 +476,7 @@ class TestCC(TestCase):
     def test49(self):
         """
         Utilizes category partition testing to assess:
-        Prefix   :  2321 MC
+        Prefix   :  2321 MC (valid prefix)
         Length   :  16
         CheckBit :  Valid
         """
