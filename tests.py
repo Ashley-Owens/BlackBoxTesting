@@ -189,7 +189,7 @@ class TestCC(TestCase):
     def test19(self):
         """
         Utilizes category partition testing to assess:
-        Prefix   :  2221-2720 MC
+        Prefix   :  2221 MC
         Length   :  16
         CheckBit :  Valid
         """
@@ -446,6 +446,42 @@ class TestCC(TestCase):
         CheckBit :  Valid
         """
         self.assertTrue(credit_card_validator("2720996726400694"))
+
+    def test46(self):
+        """
+        Utilizes category partition testing to assess:
+        Prefix   :  2621 MC
+        Length   :  16
+        CheckBit :  Valid
+        """
+        self.assertTrue(credit_card_validator("2621136512752434"))
+    
+    def test47(self):
+        """
+        Utilizes category partition testing to assess:
+        Prefix   :  2521 MC
+        Length   :  16
+        CheckBit :  Valid
+        """
+        self.assertTrue(credit_card_validator("2521131819156158"))
+    
+    def test48(self):
+        """
+        Utilizes category partition testing to assess:
+        Prefix   :  2421 MC
+        Length   :  16
+        CheckBit :  Valid
+        """
+        self.assertTrue(credit_card_validator("2421480425073427"))
+    
+    def test49(self):
+        """
+        Utilizes category partition testing to assess:
+        Prefix   :  2321 MC
+        Length   :  16
+        CheckBit :  Valid
+        """
+        self.assertTrue(credit_card_validator("2321686910633480"))
 
 
 if __name__ == '__main__':
