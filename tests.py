@@ -2,7 +2,11 @@
 # CS 362 HW 1
 # Black box testing assignment in which the tester does not have access to the source code. 
 # This testing suite was created using the TSL Generator software using Category Partition Testing.
-
+# Bug 1: The empty string
+# Bug 2: Visa card number length=15 digits
+# Bug 3: Valid Visa card number
+# Bug 4: Invalid AE checksum digit?
+# Bug 5: AE card number length >15 digits
 
 from unittest import TestCase
 import unittest
@@ -256,7 +260,7 @@ class TestCC(TestCase):
         Length   :  15
         CheckBit :  Valid
         """
-        self.assertTrue(credit_card_validator("340283340064840"))
+        self.assertTrue(credit_card_validator("340283341164847"))
     
     def test27(self):
         """
@@ -328,7 +332,7 @@ class TestCC(TestCase):
         Length   :  15
         CheckBit :  Valid
         """
-        self.assertTrue(credit_card_validator("377881636901264"))
+        self.assertTrue(credit_card_validator("377991636901261"))
 
     def test35(self):
         """
@@ -428,6 +432,26 @@ class TestCC(TestCase):
         CheckBit :  Valid
         """
         self.assertTrue(credit_card_validator("5568657899972368"))
+    
+    def test45(self):
+        """
+        Utilizes category partition testing to assess: 
+        Prefix   :  3 Visa (boundary value)
+        Length   :  16
+        CheckBit :  Invalid (checksum -1)
+        """
+        self.assertFalse(credit_card_validator("3539804460355538"))
+    
+    def test46(self):
+        """
+        Utilizes category partition testing to assess: 
+        Prefix   :  5 Visa (boundary value)
+        Length   :  16
+        CheckBit :  Invalid (checksum -1)
+        """
+        self.assertFalse(credit_card_validator("5769518937345775"))
+    
+    
 
 
 
