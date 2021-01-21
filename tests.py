@@ -3,9 +3,9 @@
 # Black box testing assignment in which the tester does not have access to the source code. 
 # This testing suite was created using the TSL Generator software using Category Partition Testing.
 # Bug 1: The empty string
-# Bug 2: Visa card number length=15 digits
+# Bug 2: Visa card number length <16 digits
 # Bug 3: Valid Visa card number
-# Bug 4: Invalid AE checksum digit?
+# Bug 4: Invalid AE checksum digit and valid AE card numbers?
 # Bug 5: AE card number length >15 digits
 
 from unittest import TestCase
@@ -436,38 +436,13 @@ class TestCC(TestCase):
     def test45(self):
         """
         Utilizes category partition testing to assess: 
-        Prefix   :  3 Visa (boundary value)
+        Prefix   :  2720 MC
         Length   :  16
-        CheckBit :  Invalid (checksum -1)
+        CheckBit :  Valid
         """
-        self.assertFalse(credit_card_validator("3539804460355538"))
-    
-    def test46(self):
-        """
-        Utilizes category partition testing to assess: 
-        Prefix   :  5 Visa (boundary value)
-        Length   :  16
-        CheckBit :  Invalid (checksum -1)
-        """
-        self.assertFalse(credit_card_validator("5769518937345775"))
+        self.assertTrue(credit_card_validator("2720996726400694"))
     
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 if __name__ == '__main__':
     unittest.main()
