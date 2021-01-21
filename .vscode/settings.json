@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "venv/bin/python3",
+    "python.linting.enabled": true,
+    "python.linting.pycodestyleEnabled": true,
+    "[python]": {
+
+        "editor.wordBasedSuggestions": false
+    }
+}
