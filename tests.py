@@ -455,7 +455,7 @@ class TestCC(TestCase):
         CheckBit :  Valid
         """
         self.assertTrue(credit_card_validator("2621136512752434"))
-    
+
     def test47(self):
         """
         Utilizes category partition testing to assess:
@@ -464,7 +464,7 @@ class TestCC(TestCase):
         CheckBit :  Valid
         """
         self.assertTrue(credit_card_validator("2521131819156158"))
-    
+
     def test48(self):
         """
         Utilizes category partition testing to assess:
@@ -473,7 +473,7 @@ class TestCC(TestCase):
         CheckBit :  Valid
         """
         self.assertTrue(credit_card_validator("2421480425073427"))
-    
+
     def test49(self):
         """
         Utilizes category partition testing to assess:
